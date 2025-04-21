@@ -94,6 +94,34 @@ Instead of simply generating chapters and asking for feedback, NovelForger repli
     - `0.9`: Applied to character and chapter generation to promote creativity, emotional depth, and variation.
   - **Top-k** is fixed at `1` for strict enforcement and auto (default for Gemini is 40) for another task.
   - These values were selected to optimize the trade-off between narrative coherence and imaginative output.
+  
+```python
+from langchain_google_genai import ChatGoogleGenerativeAI
+# Create LLM for each task
+classificator = ChatGoogleGenerativeAI(
+    model="models/gemini-1.5-flash-latest", 
+    google_api_key=os.environ["GOOGLE_API_KEY"],
+    temperature=0,            # creativity (0.0 = deterministic, 1.0 = diverse)
+    top_p=1,                  # nucleus sampling
+    max_output_tokens=10      # 15 characters only
+)
+
+creative_llm = ChatGoogleGenerativeAI(  # For plot generation
+    model="models/gemini-2.0-flash-exp",
+    google_api_key=os.environ["GOOGLE_API_KEY"],
+    temperature=1,  
+    top_p=0.7, 
+    max_output_tokens=10000
+)
+
+strict_llm = ChatGoogleGenerativeAI(
+    model="models/gemini-2.0-flash-exp",
+    google_api_key=os.environ["GOOGLE_API_KEY"],
+    temperature=0, 
+    top_p=1,
+    max_output_tokens=2048
+)
+```
 
 - **Markdown-Only Output**:
   - Each generated chapter is exported as a Markdown block, including:
@@ -146,6 +174,7 @@ The current token window constraint may cause long-form content to be truncated.
 
 - [🧠 Kaggle Notebook (Executable)](https://www.kaggle.com/code/cedrusdang/novelforger-gemini-langchain-ai-agent-novelist/edit/run/235129587)
 - [📘 GitHub Repository (Blogpost/Source)](https://github.com/cedrusdang/NovelForger)
+- [🖹 GitHub Notebook (Source Code)](https://github.com/cedrusdang/NovelForger/blob/main/novelforger-gemini-langchain-ai-agent-novelist.ipynb)
 - [🎥 YouTube Demo Walkthrough](https://youtube.com/your-video-link)
 
 ---
