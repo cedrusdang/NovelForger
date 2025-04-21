@@ -80,19 +80,28 @@ Instead of simply generating chapters and asking for feedback, NovelForger repli
 
 - **Gemini Model Roles**:
   - `gemini-1.5-flash`: Used for input classification (e.g., language, genre). It's cost-efficient and fast — ideal for deterministic tasks with low latency.
+  
   - `gemini-2.0-flash-exp`: Handles creative tasks (plot, characters, chapters) and structural evaluation. Balanced between response diversity and speed.
+  
   - `gemini-1.5-pro`: Offer better handling of quotations and deeper evaluation, but were excluded due to quota constraints and higher inference cost during iterative generation loops.
-
+  
 - **LangGraph Agent Architecture**:
   - Each LangGraph node encapsulates one structured creative step (e.g., plot design, character generation, evaluation).
+  
   - Nodes communicate through state transitions, with evaluation feedback enabling routing, looping, or regeneration.
+  
   - The architecture supports rollback and conditional overrides, effectively simulating an editorial workflow.
 
 - **Prompt Sampling Strategy**:
+  
   - **Temperature** is dynamically adjusted between `0.6–0.9` based on the generation stage:
+  
     - `0.6`: Used for classification and plot structuring to maintain focus and reduce hallucinations.
+    
     - `0.9`: Applied to character and chapter generation to promote creativity, emotional depth, and variation.
+      
   - **Top-k** is fixed at `1` for strict enforcement and auto (default for Gemini is 40) for another task.
+  
   - These values were selected to optimize the trade-off between narrative coherence and imaginative output.
   
 ```python
