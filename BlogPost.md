@@ -144,8 +144,8 @@ The current token window constraint may cause long-form content to be truncated.
 
 ## 🔗 Resources
 
-- [🧠 Kaggle Notebook (Executable)](https://kaggle.com/code/your-notebook-link)
-- [📘 GitHub Repository (Blogpost/Source)](https://github.com/your-repo-link)
+- [🧠 Kaggle Notebook (Executable)](https://www.kaggle.com/code/cedrusdang/novelforger-gemini-langchain-ai-agent-novelist/edit/run/235129587)
+- [📘 GitHub Repository (Blogpost/Source)](https://github.com/cedrusdang/NovelForger)
 - [🎥 YouTube Demo Walkthrough](https://youtube.com/your-video-link)
 
 ---
