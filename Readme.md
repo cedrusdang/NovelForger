@@ -1,12 +1,21 @@
 # ✒️ NovelForger: A LangGraph + Gemini AI Fiction Assistant
 
+
+
+## 🔗 Resources
+
+- [🧠 Kaggle Notebook (Executable)](https://www.kaggle.com/code/cedrusdang/novelforger-gemini-langchain-ai-agent-novelist)
+- [📘 GitHub Repository (Blogpost/Source)](https://github.com/cedrusdang/NovelForger)
+- [🖹 GitHub Notebook (Source Code)](https://github.com/cedrusdang/NovelForger/blob/main/novelforger-gemini-langchain-ai-agent-novelist.ipynb)
+- [🎥 YouTube Demo Walkthrough]([https://youtube.com/your-video-link](https://youtu.be/sKL_F2TKCzg))
+
+---
+
 ## 🎯 Motivation
 
 AI writing tools often generate generic, surface-level content with limited structural coherence or emotional depth. More importantly, they fail to replicate the professional creative workflow of authors and editors in fiction publishing.
 
 **NovelForger** addresses this gap by simulating a full-stack creative process for fiction writing—from structural plot design to AI-generated chapters, automated editorial review, and human-led orchestration. The goal is to create a three-layer workflow, AI-AI-Human, and a two-layer workflow, AI-AI.
-
----
 
 ## 💡 What We Built
 
@@ -218,16 +227,6 @@ The current token window constraint may cause long-form content to be truncated.
 - Expand narrative dimensions to strengthen inter-component connectivity and overall story cohesion.
 - Design a more robust GUI to allow human editors to interactively review, annotate, and modify outputs with finer control.
 - Translate high-level editorial goals into more AI-digestible instruction sets to align human intent and model output better.
-
-
-## 🔗 Resources
-
-- [🧠 Kaggle Notebook (Executable)](https://www.kaggle.com/code/cedrusdang/novelforger-gemini-langchain-ai-agent-novelist/edit/run/235129587)
-- [📘 GitHub Repository (Blogpost/Source)](https://github.com/cedrusdang/NovelForger)
-- [🖹 GitHub Notebook (Source Code)](https://github.com/cedrusdang/NovelForger/blob/main/novelforger-gemini-langchain-ai-agent-novelist.ipynb)
-- [🎥 YouTube Demo Walkthrough](https://youtube.com/your-video-link)
-
----
 
 ## 📚 References & Frameworks Used
 
