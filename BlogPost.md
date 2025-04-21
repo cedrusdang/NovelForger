@@ -22,6 +22,9 @@ The system walks users through:
 
 It supports multiple languages, with English as the primary language, but also works fine with others. For example, its performance is excellent when trying to create a Vietnamese children's tale novel, even without human interactions.
 
+![image](https://github.com/user-attachments/assets/db9341a8-c905-4887-a210-7455f2502a0b)
+***LangChain - Gemini AI Agent's Structure Diagram***
+
 ---
 
 ## 🔁 Simulating Real Literary Workflows
