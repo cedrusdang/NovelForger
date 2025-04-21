@@ -7,7 +7,7 @@
 - [🧠 Kaggle Notebook (Executable)](https://www.kaggle.com/code/cedrusdang/novelforger-gemini-langchain-ai-agent-novelist)
 - [📘 GitHub Repository (Blogpost/Source)](https://github.com/cedrusdang/NovelForger)
 - [🖹 GitHub Notebook (Source Code)](https://github.com/cedrusdang/NovelForger/blob/main/novelforger-gemini-langchain-ai-agent-novelist.ipynb)
-- [🎥 YouTube Demo Walkthrough]([https://youtube.com/your-video-link](https://youtu.be/sKL_F2TKCzg))
+- [🎥 YouTube Demo Walkthrough](https://www.kaggle.com/code/cedrusdang/novelforger-gemini-langchain-ai-agent-novelist))
 
 ---
 
