@@ -53,7 +53,25 @@ Instead of simply generating chapters and asking for feedback, NovelForger repli
 ## 🧠 GenAI Capabilities Demonstrated
 
 - ✅ **Structured Output**  
- Output is consistently formatted in structured Markdown for readability and export, alongside JSON-style internal state management for chapters, characters, and plot elements. Includes classification logic (e.g., yes/no validation).
+ Output is consistently formatted in structured Markdown for readability and export, alongside Bolloe-style internal state management for chapters, characters, and plot elements. Includes classification logic (e.g., yes/no validation).
+
+> Samples for Markdown formatting and classification boole style out put:
+
+```python
+# 0.2 Creative level
+creative_level = (
+    "Write with vivid imagination and emotional depth. Use expressive language, authentic tone, and unique details. "
+    "Avoid clichés or generic phrasing. Be stylistically rich, aiming for a novel's literary quality. "
+    "Each output should feel original, emotionally evocative, and highly creative."
+)
+
+if isinstance(last_msg, HumanMessage):
+    validation_prompt = f"Is '{user_input}' is a valid genre or type of fictional novel? yes - no only."
+    resp = invoke_with_retry(classificator, [HumanMessage(content=validation_prompt)]).content.strip().lower()
+    if "yes" in resp:
+        story_data["novel_type"] = user_input
+        return messages + [AIMessage(content=f"Great! You've selected: **{user_input}**. Let's continue.")], True
+```
 
 - ✅ **Agents**  
  LangGraph orchestrates a modular, state-aware agent system, where each creative and evaluative step (e.g., language selection, plot generation, evaluation) is modelled as a discrete, controllable node.
@@ -64,9 +82,32 @@ Instead of simply generating chapters and asking for feedback, NovelForger repli
 - ✅ **Long Context Window**  
  Gemini models utilize extended token windows to carry context between story stages, including cross-chapter coherence and character consistency.
 
+Samples
+
+```python
+# === Step: Auto generation ===
+if user_input == "auto":
+    plot_prompt = (f"All output must in {story_data['language']}: create a plot outline that must not have any detail info about characters, as there is other later steps do do so,"
+                    f"have plot level as: {plot_level} for a {story_data['novel_type']} novel."
+                    f"Format as plain text summary. Creative level: {creative_level}."
+                    f"Technique to use is: {storytelling_prompt}. Detail as {plot_level} and with format as {format_control}")
+    plot = invoke_with_retry(creative_llm, [HumanMessage(content=plot_prompt)]).content.strip()
+    story_data["plot"] = plot
+    return messages + [AIMessage(content=f"Here's a plot idea:\n\n{plot}\n\nDo you want to proceed to character creation? (`yes` / `no`)")], "confirm"
+```
+
 - ✅ **Context Caching**  
  Metadata, plot outlines, and feedback from previous chapters are cached and reused to maintain thematic alignment and narrative flow.
 
+Sample:
+
+```python
+improve_prompt = (
+    f"All output must in {lang}. Revise the following chapter using this feedback. Preserve plot and structure.\n\n"
+    f"{format_control_final}\n{creative_level}\n\n"
+    f"Feedback:\n{story_data['qa_feedback_temp']}\n\nOriginal:\n{temp}"
+)
+```
 - ✅ **Self-Evaluation & Rework Loop**  
  An AI-based reviewer scores chapters and triggers a re-generation process when structural or emotional criteria are not met — mimicking editorial review.
 
