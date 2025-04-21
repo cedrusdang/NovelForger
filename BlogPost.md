@@ -110,11 +110,11 @@ Langchain's chatbot menu:
 
 ![image](https://github.com/user-attachments/assets/92fd67a0-d8a7-48a4-8cf3-9a6acf034d26)
 
-High quality and detail plot and characte build:
+High-quality and detailed plot and character build:
 
 ![image](https://github.com/user-attachments/assets/6fe5cfe9-fba2-4d75-9d6a-e4b3be03018c)
 
-Detail review with intruction that can be use to rework on the generation as an editor:
+Detailed review with instructions that can be used to rework the generation as an editor:
 
 ![image](https://github.com/user-attachments/assets/315a97f5-33aa-4eda-b42c-f0740550e68a)
 
@@ -122,6 +122,9 @@ High quality, low rate of error Markdown formatting:
 
 ![image](https://github.com/user-attachments/assets/2f69205c-13c7-45d9-8857-f0da1d7ee372)
 
+The ability to work in another language, however, does have a medium rate of error, and the AI agent did skip the intruction and went back to English:
+
+![image](https://github.com/user-attachments/assets/39f38b0b-d753-487f-8606-94b2b9c195ea)
 
 ## ⚠️ Limitations & Future Work
 
